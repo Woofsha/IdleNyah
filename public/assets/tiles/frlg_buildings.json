@@ -1,0 +1,139 @@
+{
+ "note": "Complete FRLG building sprites + the animated fountain, cut from the Buildings sheet. The white sheet background was keyed out with a border flood fill, so the pieces have real alpha and are drawn at 2x in game (drawImage with w*2, h*2).",
+ "sourcePage": "https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/asset/3849/",
+ "imageUrl": "https://www.spriters-resource.com/media/assets/4/3849.png",
+ "sheet": {
+  "file": "frlg_buildings.png",
+  "w": 340,
+  "h": 300
+ },
+ "drawScale": 2,
+ "pieces": [
+  {
+   "name": "house_green",
+   "x": 0,
+   "y": 0,
+   "w": 80,
+   "h": 64
+  },
+  {
+   "name": "house_mid",
+   "x": 84,
+   "y": 0,
+   "w": 80,
+   "h": 56
+  },
+  {
+   "name": "house_red",
+   "x": 168,
+   "y": 0,
+   "w": 80,
+   "h": 72
+  },
+  {
+   "name": "house_blue",
+   "x": 252,
+   "y": 0,
+   "w": 80,
+   "h": 55
+  },
+  {
+   "name": "house_blue2",
+   "x": 0,
+   "y": 76,
+   "w": 96,
+   "h": 56
+  },
+  {
+   "name": "house_yellow",
+   "x": 100,
+   "y": 76,
+   "w": 64,
+   "h": 63
+  },
+  {
+   "name": "house_purple",
+   "x": 168,
+   "y": 76,
+   "w": 80,
+   "h": 56
+  },
+  {
+   "name": "house_green2",
+   "x": 252,
+   "y": 76,
+   "w": 64,
+   "h": 72
+  },
+  {
+   "name": "mart",
+   "x": 0,
+   "y": 152,
+   "w": 64,
+   "h": 62
+  },
+  {
+   "name": "center",
+   "x": 68,
+   "y": 152,
+   "w": 80,
+   "h": 70
+  },
+  {
+   "name": "lab",
+   "x": 152,
+   "y": 152,
+   "w": 112,
+   "h": 72
+  },
+  {
+   "name": "daycare",
+   "x": 0,
+   "y": 228,
+   "w": 80,
+   "h": 72
+  },
+  {
+   "name": "sign",
+   "x": 84,
+   "y": 228,
+   "w": 20,
+   "h": 22
+  },
+  {
+   "name": "fount0",
+   "x": 108,
+   "y": 228,
+   "w": 40,
+   "h": 45
+  },
+  {
+   "name": "fount1",
+   "x": 152,
+   "y": 228,
+   "w": 40,
+   "h": 45
+  },
+  {
+   "name": "fount2",
+   "x": 196,
+   "y": 228,
+   "w": 40,
+   "h": 45
+  },
+  {
+   "name": "fount3",
+   "x": 240,
+   "y": 228,
+   "w": 40,
+   "h": 45
+  },
+  {
+   "name": "fount4",
+   "x": 284,
+   "y": 228,
+   "w": 40,
+   "h": 45
+  }
+ ]
+}

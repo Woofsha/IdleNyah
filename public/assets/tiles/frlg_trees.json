@@ -1,0 +1,33 @@
+{
+ "note": "Complete FireRed/LeafGreen trees cut from the Tileset sheet (purple marker background, ripped lawn patch and pale trunk fringe all keyed to alpha). Each piece is drawn at 2x by tiles.js, so tree_round covers 2x2 map cells plus its canopy overhang.",
+ "sourcePage": "https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/asset/3870/",
+ "sheet": {
+  "file": "frlg_trees.png",
+  "w": 72,
+  "h": 49
+ },
+ "drawScale": 2,
+ "pieces": [
+  {
+   "name": "tree_round",
+   "x": 2,
+   "y": 2,
+   "w": 32,
+   "h": 45
+  },
+  {
+   "name": "tree_narrow",
+   "x": 36,
+   "y": 2,
+   "w": 16,
+   "h": 35
+  },
+  {
+   "name": "tree_bush",
+   "x": 54,
+   "y": 2,
+   "w": 16,
+   "h": 21
+  }
+ ]
+}

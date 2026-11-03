@@ -1,0 +1,25 @@
+{
+ "note": "FireRed/LeafGreen overworld blocks. Each 32x32 block is one 16x16 GBA map tile drawn at 2x, so the world renders at twice the GBA scale (same as the 2x-scaled FRLG screen) and lines up with the 32px map grid in world.js. Blocks 0/1/2/15 are the same lawn tile, 5/6/7 the same shaded forest floor - town ground is deliberately free of per-cell variation.",
+ "source": "The Spriters Resource - Pokemon FireRed/LeafGreen - Tileset pages: ground blocks re-cut from tileset-2 (regular 16px grid), buildings from the Buildings sheet, trees from the Tileset sheet",
+ "gridCols": 8,
+ "blockPx": 32,
+ "pixelPerfectSheet": "frlg_blocks.png",
+ "names": [
+  "lawn",
+  "lawn2",
+  "lawn3",
+  "routegrass",
+  "tallgrass",
+  "forest",
+  "forest2",
+  "forest3",
+  "water",
+  "path",
+  "sand",
+  "pave",
+  "pave2",
+  "flower",
+  "shallow",
+  "lawn4"
+ ]
+}
