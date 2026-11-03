@@ -932,6 +932,8 @@ export class CreaturesManager {
     // Decor container sits in entityLayer (sorted appropriately)
     this.habitatDecorContainer = new Container({
       label: 'habitat-decor-container',
+      zIndex: 24,
+      sortableChildren: true,
     });
     this.entityLayer.addChild(this.habitatDecorContainer);
 
@@ -953,17 +955,17 @@ export class CreaturesManager {
   private initHabitatDecor(): void {
     // 1. Habitat Porch: Baskets (Zone 1) - Authentic pixel art wicker baskets
     const bespoke = getBespokeEstateAssets();
-    const porchDecor = new Container({ label: 'decor-habitat-porch', zIndex: 30 });
+    const porchDecor = new Container({ label: 'decor-habitat-porch', zIndex: 24 });
     const basket1 = new Sprite({
       texture: bespoke.wickerBasket,
-      x: 52,
-      y: 26,
+      x: 36,
+      y: 12,
       roundPixels: true,
     });
     const basket2 = new Sprite({
       texture: bespoke.wickerBasket,
-      x: 76,
-      y: 30,
+      x: 62,
+      y: 14,
       roundPixels: true,
     });
     porchDecor.addChild(basket1, basket2);

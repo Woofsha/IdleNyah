@@ -317,7 +317,8 @@ export class EstateView {
         } else if (isPorchWalk) {
           this.addCustomTile(ground, this.bespoke.porchWood, col, row);
         } else if (isHedge) {
-          this.addCustomTile(ground, this.bespoke.hedge, col, row);
+          // Ground base underneath hedge is green lawn
+          this.addCustomTile(ground, this.bespoke.lawn, col, row);
         } else if ((col === -3 && row === 2) || (col === 2 && row === 2) || (col === -4 && row === 4) || (col === 3 && row === 4)) {
           this.addCustomTile(ground, this.bespoke.lawnFlowers, col, row);
         } else {
@@ -343,6 +344,24 @@ export class EstateView {
       const tree = this.createTree(def.type, def.x, def.y, `z1-tree-${i}`, 'zone_01_parlor', true);
       this.entityLayer.addChild(tree);
       entities.push(tree);
+    });
+
+    // 2.5D Physical Scenery Hedges: rendered in entityLayer with dynamic depth sorting (zIndex = 64)
+    // Anchored at ground base (y = 64) so any porch decor, baskets, or actors behind them (y < 64)
+    // are occluded naturally behind the foliage instead of rendering on top.
+    const hedgeCols = [-4, -3, -2, 1, 2, 3];
+    hedgeCols.forEach((hcol) => {
+      const hedgeSprite = new Sprite({
+        texture: this.bespoke.hedge,
+        anchor: { x: 0.5, y: 1.0 },
+        x: hcol * 32 + 16,
+        y: 64,
+        roundPixels: true,
+        label: `z1-hedge-${hcol}`,
+      });
+      hedgeSprite.zIndex = 64;
+      this.entityLayer.addChild(hedgeSprite);
+      entities.push(hedgeSprite);
     });
 
     // Self-Declaring Entity: register Zone 1 hedges
