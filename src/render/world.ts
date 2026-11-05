@@ -15,6 +15,7 @@ export interface WorldViewOptions {
   app: Application;
   assets: GameAssets;
   simulation?: GameSimulation;
+  zoom?: number;
   onWorldClick?: (worldX: number, worldY: number, screenX: number, screenY: number) => void;
   onStructureClick?: (structureType: string, worldX: number, worldY: number) => void;
   onCatchCreature?: (wildInstanceId: string, useBait: boolean) => CatchResult;
@@ -75,6 +76,9 @@ export class WorldView {
     this.app = options.app;
     this.assets = options.assets;
     this.onWorldClickCallback = options.onWorldClick;
+    if (options.zoom !== undefined) {
+      this.zoom = options.zoom;
+    }
 
     // Root world container
     this.worldContainer = new Container({
@@ -259,6 +263,15 @@ export class WorldView {
 
     this.app.stage.on('pointerup', endDrag);
     this.app.stage.on('pointerupoutside', endDrag);
+
+    // Mouse wheel zoom support: allows zooming in/out smoothly between 1.0x and 2.5x
+    this.app.stage.on('wheel', (e: any) => {
+      const delta = e.deltaY ?? 0;
+      if (delta === 0) return;
+      const zoomDelta = delta > 0 ? -0.1 : 0.1;
+      this.zoom = Math.max(1.0, Math.min(2.5, Math.round((this.zoom + zoomDelta) * 10) / 10));
+      this.updateCameraTransform();
+    });
   }
 
   /**

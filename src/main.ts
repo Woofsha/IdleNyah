@@ -220,6 +220,7 @@ async function bootstrap(): Promise<void> {
       app,
       assets,
       simulation,
+      zoom: 1.5, // Zoomed out view
       onWorldClick: (worldX, worldY) => {
         // Active click mechanics
         const clickResult = simulation.handleClick();
